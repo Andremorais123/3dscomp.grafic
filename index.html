@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Academy - Educação de Excelência</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                Global Academy
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Buscar...">
+                <span style="color: white; cursor: pointer;">🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-icon">📚</div>
+            <div class="floating-icon">🎯</div>
+            <div class="floating-icon">💡</div>
+            <div class="floating-icon">🌟</div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">GLOBAL ACADEMY</h1>
+                <h2 class="hero-subtitle">Educação de Excelência Internacional</h2>
+                <p class="hero-description">
+                    Transformamos vidas através da educação de qualidade. Nossa metodologia inovadora 
+                    prepara estudantes para os desafios do futuro, combinando conhecimento acadêmico 
+                    com desenvolvimento pessoal e profissional.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Matricule-se Agora</a>
+                    <a href="#" class="btn btn-secondary">Saiba Mais</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="student-card">
+                    <div class="student-photo"></div>
+                    <div class="student-info">
+                        <h3 class="student-name">Maria Silva</h3>
+                        <p class="student-course">Engenharia Internacional</p>
+                        <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                            "A Global Academy me proporcionou uma educação excepcional e oportunidades 
+                            únicas de crescimento pessoal e profissional."
+                        </p>
+                        <div class="achievement-badges">
+                            <span class="badge">Excelência</span>
+                            <span class="badge">Liderança</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">Por que escolher a Global Academy?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎓</span>
+                    <h3 class="feature-title">Educação de Qualidade</h3>
+                    <p class="feature-description">
+                        Currículo internacional reconhecido mundialmente, com professores altamente qualificados 
+                        e metodologias de ensino inovadoras.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🌍</span>
+                    <h3 class="feature-title">Visão Global</h3>
+                    <p class="feature-description">
+                        Preparamos nossos alunos para serem cidadãos globais, com programas de intercâmbio 
+                        e parcerias internacionais.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💻</span>
+                    <h3 class="feature-title">Tecnologia Avançada</h3>
+                    <p class="feature-description">
+                        Laboratórios modernos e plataformas digitais de última geração para uma 
+                        experiência de aprendizado completa.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🤝</span>
+                    <h3 class="feature-title">Suporte Personalizado</h3>
+                    <p class="feature-description">
+                        Acompanhamento individual de cada aluno, com mentoria personalizada e 
+                        suporte acadêmico especializado.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🏆</span>
+                    <h3 class="feature-title">Excelência Acadêmica</h3>
+                    <p class="feature-description">
+                        Consistentemente classificada entre as melhores instituições de ensino, 
+                        com altos índices de aprovação e satisfação.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🚀</span>
+                    <h3 class="feature-title">Preparação para o Futuro</h3>
+                    <p class="feature-description">
+                        Desenvolvemos habilidades do século XXI, preparando nossos alunos para 
+                        os desafios e oportunidades do mundo moderno.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const searchBox = document.querySelector('.search-box');
+        searchBox.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                alert('Busca por: ' + this.value);
+                this.value = '';
+            }
+        });
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const header = document.querySelector('.header');
+            
+            if (scrollTop > lastScrollTop) {
+                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
